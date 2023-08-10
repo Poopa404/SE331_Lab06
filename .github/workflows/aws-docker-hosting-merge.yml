@@ -31,7 +31,7 @@ jobs:
                     tags: dto8/se331-lab06:latest
             -
                 name: copy file via ssh password
-                uses: appleboy.scp-action@v0.1.4
+                uses: appleboy/scp-action@v0.1.4
                 with:
                     host: ${{ secrets.HOST_SERVER }}
                     username: ${{ secrets.HOST_USER_NAME }}
@@ -41,7 +41,7 @@ jobs:
                     target: "/home/ubuntu/lab6"
             -
                 name: docker compose
-                uses: appleboy.ssh-action@v0.1.10
+                uses: appleboy/ssh-action@v0.1.10
                 with:
                     host: ${{ secrets.HOST_SERVER }}
                     username: ${{ secrets.HOST_USER_NAME }}
