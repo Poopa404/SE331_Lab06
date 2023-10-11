@@ -6,16 +6,31 @@ export interface EventItem {
   location: string
   date: string
   time: string
-  organizer: string
+  organizer: EventOrganizer
+  images: string[]
 }
 
-export interface Student {
+export class EmptyEventItem implements EventItem {
+  id: number = 0
+  category: string = ''
+  title: string = ''
+  description: string = ''
+  location: string = ''
+  date: string = ''
+  time: string = ''
+  organizer: EventOrganizer = {id: 0, name: '', images: [], roles: []}
+  images: string[] = []
+}
+
+export interface OrganizerItem {
   id: number
-  studentId: string
+  address: string
+  organizationName: string
+}
+
+export interface EventOrganizer {
+  id: number
   name: string
-  surname: string
-  gpa: string
-  image: string
-  penAmount: number
-  description: string
+  images: string[]
+  roles: string[]
 }
